@@ -1,11 +1,13 @@
 from flask import Blueprint, request, jsonify
 from application.usecases.register_user import RegisterUserUseCase
 from infrastructure.repositories.user_repository import UserRepository
+from infrastructure.repositories.notification_repository import NotificationRepository
 
 register_user_blueprint = Blueprint('register_user', __name__)
 
 repository = UserRepository(connection_string='mongodb://localhost:27017/', db_name='taskMasterU')
-register_user_usecase = RegisterUserUseCase(user_repository=repository)
+notification_repository = NotificationRepository(connection_string='mongodb://localhost:27017/', db_name='taskMasterNot')
+register_user_usecase = RegisterUserUseCase(user_repository=repository, notification_repository=notification_repository)
 
 @register_user_blueprint.route('/', methods=['POST'])
 def register_user():
