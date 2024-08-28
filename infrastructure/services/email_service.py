@@ -3,8 +3,8 @@ import ssl
 import smtplib
 
 def send_confirmation_email(recipient_email, token):
-    email_sender = "taskmasterspport@gmail.com"
-    password = "rzjt yaky xlxg vtvw"
+    email_sender = ""
+    password = ""
     subject = "Confirma tu registro en TaskMaster"
     body = f"""
     Hola,
