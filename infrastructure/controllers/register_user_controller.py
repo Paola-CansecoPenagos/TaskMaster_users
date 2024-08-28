@@ -5,8 +5,8 @@ from infrastructure.repositories.notification_repository import NotificationRepo
 
 register_user_blueprint = Blueprint('register_user', __name__)
 
-repository = UserRepository(connection_string='mongodb://localhost:27017/', db_name='taskMasterU')
-notification_repository = NotificationRepository(connection_string='mongodb://localhost:27017/', db_name='taskMasterNot')
+repository = UserRepository()
+notification_repository = NotificationRepository()
 register_user_usecase = RegisterUserUseCase(user_repository=repository, notification_repository=notification_repository)
 
 @register_user_blueprint.route('/', methods=['POST'])
