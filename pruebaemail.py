@@ -6,10 +6,6 @@ import smtplib
 
 load_dotenv()
 
-email_sender = "taskmasterspport@gmail.com"
-password = "rzjt yaky xlxg vtvw"
-email_reciver = "piopenagos8@gmail.com"
-
 subject = "Bienvenido a TaskMaster"
 body = """
     Aqui agregamos el mensaje
