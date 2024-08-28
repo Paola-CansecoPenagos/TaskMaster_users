@@ -5,7 +5,7 @@ from infrastructure.services.jwt_service import decode_access_token
 
 get_group_members_blueprint = Blueprint('get_group_members', __name__)
 
-group_repository = GroupRepository(connection_string='mongodb://localhost:27017/', db_name='taskMasterU')
+group_repository = GroupRepository()
 get_group_members_usecase = GetGroupMembersUseCase(group_repository=group_repository)
 
 @get_group_members_blueprint.route('/group-members', methods=['GET'])
