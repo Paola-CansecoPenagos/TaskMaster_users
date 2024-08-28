@@ -5,7 +5,7 @@ from infrastructure.services.jwt_service import decode_access_token
 
 check_user_existence_blueprint = Blueprint('check_user_existence', __name__)
 
-repository = UserRepository(connection_string='mongodb://localhost:27017/', db_name='taskMasterU')
+repository = UserRepository()
 check_user_existence_usecase = CheckUserExistenceUseCase(user_repository=repository)
 
 @check_user_existence_blueprint.route('/user-exists', methods=['GET'])
