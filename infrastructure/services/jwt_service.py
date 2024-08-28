@@ -1,7 +1,7 @@
 import jwt
 from datetime import datetime, timedelta, timezone
 
-SECRET_KEY = "6f8632261860cdc4a6aed3683dbf12093202b6ad3fa9dc8dec427c752002a82b"  
+SECRET_KEY = ""  
 
 def create_access_token(user_id: str, expires_delta: timedelta = timedelta(hours=1)):
     to_encode = {'user_id': user_id}
