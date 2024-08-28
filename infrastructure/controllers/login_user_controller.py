@@ -5,7 +5,7 @@ from utils.text_utils import escape_html, escape_javascript
 
 login_user_blueprint = Blueprint('login_user', __name__)
 
-repository = UserRepository(connection_string='mongodb://localhost:27017/', db_name='taskMasterU')
+repository = UserRepository()
 login_user_usecase = LoginUserUseCase(user_repository=repository)
 
 @login_user_blueprint.route('/login', methods=['POST'])
