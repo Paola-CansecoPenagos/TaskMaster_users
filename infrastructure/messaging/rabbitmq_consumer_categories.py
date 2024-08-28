@@ -5,7 +5,7 @@ from infrastructure.repositories.user_repository import UserRepository
 
 def start_consumer():
     connection = pika.BlockingConnection(
-        pika.ConnectionParameters(host='localhost', credentials=pika.PlainCredentials('admin', 'admin')))
+        pika.ConnectionParameters(host='localhost', credentials=pika.PlainCredentials()))
     channel = connection.channel()
 
     channel.queue_declare(queue='verification_queue')
