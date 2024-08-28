@@ -17,7 +17,7 @@ def start_consumer():
 
         user_info = decode_access_token(token)
         user_id = user_info.get('user_id') if user_info else None
-        repository = UserRepository(connection_string='mongodb://localhost:27017/', db_name='taskMasterU')
+        repository = UserRepository(connection_string='', db_name='')
         user_exists = repository.find_user(user_id) is not None
 
         # Enviar la respuesta
