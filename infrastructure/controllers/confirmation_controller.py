@@ -3,7 +3,7 @@ from infrastructure.repositories.user_repository import UserRepository
 
 confirmation_blueprint = Blueprint('confirmation', __name__)
 
-repository = UserRepository(connection_string='mongodb://localhost:27017/', db_name='taskMasterU')
+repository = UserRepository()
 
 @confirmation_blueprint.route('/<token>', methods=['GET'])
 def confirm_registration(token):
