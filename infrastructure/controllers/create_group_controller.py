@@ -6,8 +6,8 @@ from infrastructure.services.jwt_service import decode_access_token
 
 create_group_blueprint = Blueprint('create_group', __name__)
 
-user_repository = UserRepository(connection_string='mongodb://localhost:27017/', db_name='taskMasterU')
-group_repository = GroupRepository(connection_string='mongodb://localhost:27017/', db_name='taskMasterU')
+user_repository = UserRepository()
+group_repository = GroupRepository()
 create_group_usecase = CreateGroupUseCase(user_repository=user_repository, group_repository=group_repository)
 
 @create_group_blueprint.route('/create-group', methods=['POST'])
