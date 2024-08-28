@@ -5,7 +5,7 @@ from infrastructure.services.jwt_service import decode_access_token
 
 get_usernames_blueprint = Blueprint('get_usernames', __name__)
 
-repository = UserRepository(connection_string='mongodb://localhost:27017/', db_name='taskMasterU')
+repository = UserRepository()
 get_usernames_usecase = GetAllUsernamesExceptUseCase(user_repository=repository)
 
 @get_usernames_blueprint.route('/usernames', methods=['GET'])
